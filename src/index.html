@@ -1,17 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marroquinería El Arte del Cuero</title>
   <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fdfdfd;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #5a3b2c;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    nav {
+      background-color: #e5d1b8;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: #5a3b2c;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+    section {
+      padding: 2rem;
+    }
+    .productos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+    .producto {
+      background-color: white;
+      border: 1px solid #ddd;
+      padding: 1rem;
+      width: 260px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .producto img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    form {
+      background-color: white;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      max-width: 500px;
+      margin: auto;
+      border-radius: 5px;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.7rem;
+      margin: 0.5rem 0;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+    }
+    form button {
+      background-color: #5a3b2c;
+      color: white;
+      padding: 0.8rem 1.2rem;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+  </style>
 </head>
-
 <body>
-  <main>
-    <h1>yeromme bladimir carrasco ramirez </h1>
-  </main>
-</body>
 
+<header>
+  <h1>Marroquinería El Arte del Cuero</h1>
+  <p>Diseño, calidad y tradición en cuero hecho a mano</p>
+</header>
+
+<nav>
+  <a href="#productos">Productos</a>
+  <a href="#contacto">Comuníquese conmigo</a>
+</nav>
+
+<section id="productos">
+  <h2 style="text-align:center;">Nuestros Productos</h2>
+  <div class="productos">
+    <div class="producto">
+      <img src="https://tse1.mm.bing.net/th/id/OIP.CqkKWKVsGHHgImNM0icI0wHaHa?pid=Api" alt="Billetera marrón">
+      <h3>Billetera Marrón</h3>
+      <p>Cuero genuino, diseño clásico.</p>
+    </div>
+    <div class="producto">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.c2VN86BXHtfC02mb-pasygHaHa?pid=Api" alt="Billetera verde">
+      <h3>Billetera Verde</h3>
+      <p>Estilo juvenil y moderno.</p>
+    </div>
+    <div class="producto">
+      <img src="https://tse1.mm.bing.net/th/id/OIP.w93d5rqaonubbg3QT7Wv4AHaJ3?pid=Api" alt="Billetera azul">
+      <h3>Billetera Azul</h3>
+      <p>Elegante y resistente.</p>
+    </div>
+    <div class="producto">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.Ts2culrJuMU1su9Bp8sXvQHaJ3?pid=Api" alt="Billetera amarilla">
+      <h3>Billetera Amarilla</h3>
+      <p>Diseño vibrante y atrevido.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <h2 style="text-align:center;">Formulario de Contacto</h2>
+  <form id="registroForm">
+    <input type="text" name="nombre" placeholder="Tu nombre completo" required />
+    <input type="email" name="correo" placeholder="Correo electrónico" required />
+    <textarea name="mensaje" placeholder="Mensaje o comentario" rows="4"></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+
+<script>
+  document.getElementById('registroForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const nombre = e.target.nombre.value;
+    const correo = e.target.correo.value;
+    const mensaje = e.target.mensaje.value;
+    alert(`Gracias por registrarte, ${nombre}. Te contactaremos pronto al correo: ${correo}`);
+    e.target.reset();
+  });
+</script>
+
+</body>
 </html>
